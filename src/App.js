@@ -1,6 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Search, History } from './pages'
+import Search from './pages/Search'
+import History from './pages/History'
+
 function App() {
 
   return (
