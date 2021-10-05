@@ -17,7 +17,10 @@ This application can be run locally on your machine by cloning the repository, i
 
 The application has the following appearance:
 
+Search Page:
 ![Search Page](./assets/search.png)
+
+History Page:
 ![History Page](./assets/history.png)
 
 
