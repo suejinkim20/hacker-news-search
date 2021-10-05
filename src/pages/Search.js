@@ -59,7 +59,6 @@ const Search = () => {
                     textAlign: 'center',
                     width: '500px'
                 }}>
-                <h1> Hacker News Search App</h1>
 
                 <FormGroup 
                     sx={{

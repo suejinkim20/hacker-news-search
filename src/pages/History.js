@@ -22,12 +22,12 @@ const History = () => {
                 width: '500px',
                 p: '20px',
                 m: '10px'
-            }}>
+            }} elevation={3}>
                 <Box sx={{
                     display: 'flex',
                     justifyContent: 'center'
                 }}>
-                    <h1>Search History</h1>
+                    <h2>Search History</h2>
                 </Box>
                 <Box>
                     <List>
