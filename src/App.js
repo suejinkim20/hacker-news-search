@@ -23,10 +23,10 @@ function App() {
           <Route exact path='/'>
             <Search />
           </Route>
-          <Route exact path='/search'>
+          <Route path='/search'>
             <Search />
           </Route>
-          <Route exact path='/history'>
+          <Route path='/history'>
             <History />
           </Route>
         </Switch>
