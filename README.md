@@ -1,5 +1,3 @@
-Readme
-
 # Hacker News Search
 
 ## Description
