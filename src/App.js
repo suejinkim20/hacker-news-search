@@ -20,9 +20,7 @@ function App() {
       
       <Router>
         <Switch>
-          <Route exact path='/'>
-            <Search />
-          </Route>
+          <Route exact path='/' component={Search} />
           <Route path='/search'>
             <Search />
           </Route>
