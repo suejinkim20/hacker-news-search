@@ -12,11 +12,17 @@ This is a search application that searches the Hacker News API (https://hn.algol
 - localStorage
 
 ## Usage
-This application is deployed using GitHub Pages at https://suejinkim20.github.io/hacker-news-search/ .
 
-It can also be run locally on your machine by cloning the repository, installing the dependencies (`npm i`), and starting up local host (`npm start`).
+This application can be run locally on your machine by cloning the repository, installing the dependencies (`npm i`), and starting up local host (`npm start`).
 
 The application has the following appearance:
 
 ![Search Page](./assets/search.png)
 ![History Page](./assets/history.png)
+
+
+## Issues
+This page is deployed to GitHub pages, but it is currently not displaying the correct components.
+
+## License
+MIT License Copyright 2021 Sue Jin Kim
