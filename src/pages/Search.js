@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import useFetch from 'react-fetch-hook'
 import Box from '@mui/material/Box'
-import Card from '@mui/material/Card'
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import { Card, CardContent } from '@mui/material/'
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
+import Paper from '@mui/material/Paper'
+import { FormGroup, Input } from '@mui/material/';
+import TextField from '@mui/material/TextField'
 
 const Search = () => {
     const url = 'http://hn.algolia.com/api/v1/search_by_date?query='
@@ -24,7 +24,6 @@ const Search = () => {
         event.preventDefault()
         let userInput = event.target.value
         userInput.toLowerCase()
-        console.log(userInput)
         setQuery(userInput)
     }
 
@@ -38,48 +37,69 @@ const Search = () => {
             localStorage.setItem('stories', JSON.stringify(history))
         }
         setQuery(null)
-
     }
    
     
     if (search) {
         stories = data.hits || []
-        console.log(stories)
     }
 
     return (
         <div>
-            <h1> Hacker News Search App</h1>
-            <Box component="span" sx={{ display: 'inline-block', mx: '2px' }}>
-                <form>
-                    <input
+            <Box sx={{
+                display: 'flex',
+                justifyContent: 'center'                
+            }}>
+                <Paper component="span" 
+                sx={{ 
+                    display: 'block', 
+                    m: '10px',
+                    p: '25px',
+                    justifyContent: 'center',
+                    textAlign: 'center',
+                    width: '500px'
+                }}>
+                <h1> Hacker News Search App</h1>
+
+                <FormGroup 
+                    sx={{
+                        flexWrap: 'wrap',
+                        m: '5px',
+                        p: '15px',
+                    }}>
+                    <TextField
                         type={'text'}
                         placeholder={'type here to search...'}
                         onChange={(event) => {handleChange(event)}}
                     />
-                    <button type='button' onClick={handleSubmit}>Search</button>
-                </form>
+                    <Button type='button' onClick={handleSubmit}>Search</Button>
+                    <Button type='button' href='/history'>View Search History</Button>
+                </FormGroup>
+
+            </Paper>
             </Box>
-            <div>
+            <Box sx={{
+                display: 'block'
+                }}>
                 {stories.map((story) => (
-                    <Box key={story.objectID} component="span" sx={{ display: 'inline-block', mx: '2px' }}>
+                    <Paper key={story.objectID} component="span" sx={{ display: 'block', mx: '2px' }}>
                         <Card >
                             <CardContent>
                                 <Typography variant="h5" >
                                     {story.title}
                                 </Typography>
-                                <p>
+                                <Typography variant="body2">
                                     {story.story_text}
-                                </p>
+                                </Typography>
                                 <Button href={story.url}>
                                     Click to View Story
                                 </Button>
                             </CardContent>
                         </Card>
-                    </Box>
+                    </Paper>
                 ))}
 
-            </div>
+            </Box>
         </div>
     )
 }

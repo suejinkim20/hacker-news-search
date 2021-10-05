@@ -1,4 +1,7 @@
 import React from 'react'
+import { Container, Box, Paper } from '@mui/material'
+import { List, ListItem } from '@mui/material'
+import Button from '@mui/material/Button'
 
 const History = () => {
     const clearHistory = () => {
@@ -10,14 +13,33 @@ const History = () => {
 
     return (
         <div>
-            <h1>Search History</h1>
-            <ul>
-                {storedQueries.map((query, index) => (
-                    <li key={index}> {query}</li>
-
-                ))}
-            </ul>
-            <button onClick={clearHistory}>Clear History</button>
+        <Container sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            textAlign: 'center'
+        }}>
+            <Paper sx={{
+                width: '500px',
+                p: '20px',
+                m: '10px'
+            }}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent: 'center'
+                }}>
+                    <h1>Search History</h1>
+                </Box>
+                <Box>
+                    <List>
+                        {storedQueries.map((query, index) => (
+                        <ListItem key={index}> {query} </ListItem>
+                        ))}
+                    </List>
+                </Box>
+            <Button onClick={clearHistory} variant='outlined' sx={{mx:'7px'}}>Clear History</Button>
+            <Button href='/search' variant='outlined' sx={{mx:'7px'}}>Return to Search</Button>
+            </Paper>
+        </Container>
 
         </div>
     )
